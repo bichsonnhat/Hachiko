@@ -1,6 +1,27 @@
-# Hachiko
+# Hachiko 🥤
 
-A full-stack mobile application project built with React Native Expo and Java Spring Boot, consisting of separate frontend and backend repositories managed as git submodules.
+A cross-platform e-commerce mobile application for beverage ordering and delivery, built with React Native Expo and Java Spring Boot. This project consists of separate frontend and backend repositories managed as git submodules.
+
+## ✨ Features
+
+### 🛍️ E-commerce Functionality
+- **Product Catalog**: Browse and search through various beverage categories
+- **Shopping Cart**: Add, remove, and manage items in your cart
+- **Order Management**: Place orders, track delivery status, and view order history
+- **Payment Integration**: Secure payment processing for transactions
+- **User Authentication**: Account creation, login, and profile management
+
+### 🚚 Delivery System
+- **Real-time Tracking**: Track your order from preparation to delivery
+- **Delivery Scheduling**: Choose preferred delivery times
+- **Location Services**: GPS-based delivery address management
+- **Push Notifications**: Order updates and delivery notifications
+
+### 📱 Cross-Platform Mobile Experience
+- **iOS & Android**: Native performance on both platforms
+- **Responsive Design**: Optimized for various screen sizes
+- **Offline Capability**: Basic functionality available without internet
+- **Modern UI/UX**: Intuitive and user-friendly interface
 
 ## 🏗️ Project Structure
 
@@ -8,8 +29,8 @@ This repository serves as the main project container that brings together the fr
 
 ```
 Hachiko/
-├── frontend/          # React Native Expo mobile application
-├── backend/           # Java Spring Boot API server
+├── frontend/          # React Native Expo mobile app for beverage ordering
+├── backend/           # Java Spring Boot API server for e-commerce backend
 ├── .gitmodules        # Git submodules configuration
 └── README.md          # This file
 ```
@@ -21,19 +42,27 @@ Hachiko/
 - **Expo**: Development platform for React Native apps
 - **TypeScript**: Type-safe JavaScript development
 - **Expo Go**: Easy testing on physical devices
+- **React Navigation**: Navigation and routing for mobile screens
+- **Redux/Context API**: State management for cart and user data
+- **Expo Location**: GPS and location services for delivery
+- **Expo Notifications**: Push notifications for order updates
 
 ### Backend (Java Spring Boot)
 - **Spring Boot**: Java framework for building REST APIs
 - **Spring Data JPA**: Data persistence and database operations
-- **Spring Security**: Authentication and authorization
+- **Spring Security**: Authentication and authorization (JWT)
+- **Spring Web**: RESTful API development
 - **Maven**: Dependency management and build tool
+- **MySQL/PostgreSQL**: Database for products, orders, and user data
+- **Payment Gateway Integration**: Secure payment processing
+- **WebSocket**: Real-time order tracking and notifications
 
 ## 📦 Submodules
 
 This project uses git submodules to manage the frontend and backend repositories separately:
 
-- **Frontend**: [`bichsonnhat/Hachiko-frontend`](https://github.com/bichsonnhat/Hachiko-frontend) - React Native Expo mobile application
-- **Backend**: [`bichsonnhat/Hachiko-backend`](https://github.com/bichsonnhat/Hachiko-backend) - Java Spring Boot REST API server
+- **Frontend**: [`bichsonnhat/Hachiko-frontend`](https://github.com/bichsonnhat/Hachiko-frontend) - React Native Expo mobile app for beverage ordering
+- **Backend**: [`bichsonnhat/Hachiko-backend`](https://github.com/bichsonnhat/Hachiko-backend) - Java Spring Boot REST API server for e-commerce and delivery management
 
 ## 🚀 Getting Started
 
@@ -90,6 +119,35 @@ cd backend
 
 # The API will be available at http://localhost:8080
 ```
+
+## 🔌 API Endpoints
+
+The Spring Boot backend provides RESTful APIs for the beverage delivery app:
+
+### Authentication & User Management
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/user/profile` - Get user profile
+- `PUT /api/user/profile` - Update user profile
+
+### Product Catalog
+- `GET /api/products` - Get all beverages
+- `GET /api/products/{id}` - Get specific product details
+- `GET /api/categories` - Get beverage categories
+- `GET /api/products/search` - Search products
+
+### Shopping Cart & Orders
+- `POST /api/cart/add` - Add item to cart
+- `GET /api/cart` - Get cart contents
+- `DELETE /api/cart/{itemId}` - Remove item from cart
+- `POST /api/orders` - Place an order
+- `GET /api/orders` - Get order history
+- `GET /api/orders/{orderId}/track` - Track order status
+
+### Delivery & Payments
+- `POST /api/payments/process` - Process payment
+- `GET /api/delivery/track/{orderId}` - Real-time delivery tracking
+- `POST /api/delivery/address` - Save delivery address
 
 ## 📱 Mobile Development
 
@@ -202,7 +260,25 @@ This project is licensed under the MIT License. See the LICENSE files in the ind
 ## 📞 Support
 
 For issues related to:
-- **Frontend**: Open an issue in the [Hachiko-frontend repository](https://github.com/bichsonnhat/Hachiko-frontend/issues)
-- **Backend**: Open an issue in the [Hachiko-backend repository](https://github.com/bichsonnhat/Hachiko-backend/issues)
-- **General project structure**: Open an issue in this repository
+- **Mobile App (Frontend)**: Open an issue in the [Hachiko-frontend repository](https://github.com/bichsonnhat/Hachiko-frontend/issues)
+- **API Server (Backend)**: Open an issue in the [Hachiko-backend repository](https://github.com/bichsonnhat/Hachiko-backend/issues)
+- **General project structure or deployment**: Open an issue in this repository
+
+## 🎯 Development Roadmap
+
+### Current Features
+- ✅ User authentication and registration
+- ✅ Product catalog and search
+- ✅ Shopping cart functionality
+- ✅ Order placement and tracking
+- ✅ Payment processing
+- ✅ Delivery management
+
+### Planned Features
+- 🔄 Real-time chat with delivery drivers
+- 🔄 Loyalty program and rewards
+- 🔄 Push notifications for promotions
+- 🔄 Advanced analytics and reporting
+- 🔄 Multi-language support
+- 🔄 Dark mode theme
 
